@@ -1039,15 +1039,38 @@ const modalAdd = document.getElementById('modal-add');
 
 // ── Init ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+    // If redirected with user payload, consume it (helps with file:// limitations)
+    try {
+        const params = new URLSearchParams(location.search);
+        const u = params.get('_ae_user');
+        if (u) {
+            localStorage.setItem('currentUser', u);
+            sessionStorage.setItem('currentUser', u);
+            const clean = location.pathname + location.hash;
+            history.replaceState(null, '', clean);
+        }
+    } catch (e) {}
+
     updateNav();
     renderGrid();
     bindEvents();
     updateCartBadge();
 });
 
+// Keep nav in sync when returning to the page or when storage changes
+window.addEventListener('pageshow', updateNav);
+window.addEventListener('storage', (e) => {
+    if (e.key === 'ae_user_updated' || e.key === 'currentUser') updateNav();
+});
+
 // ── Auth nav ────────────────────────────────
+function getCurrentSession() {
+    const raw = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+    return JSON.parse(raw || 'null');
+}
+
 function updateNav() {
-    const session = JSON.parse(sessionStorage.getItem('currentUser') || 'null');
+    const session = getCurrentSession();
     if (session) {
         authNav?.classList.add('hidden');
         userNav?.classList.remove('hidden');
@@ -1060,6 +1083,7 @@ function updateNav() {
 
 logoutBtn?.addEventListener('click', () => {
     sessionStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUser');
     location.reload();
 });
 
@@ -1157,7 +1181,7 @@ function toggleFavorite(id, btn) {
 
 // ── Color Modal ─────────────────────────────
 function openColorModal(carId) {
-    const session = JSON.parse(sessionStorage.getItem('currentUser') || 'null');
+    const session = getCurrentSession();
     if (!session) {
         sessionStorage.setItem('redirectAfterLogin', location.href);
         window.location.href = 'connexion.html';

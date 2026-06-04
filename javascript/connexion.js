@@ -39,18 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (user) {
       // Save session
-      sessionStorage.setItem('currentUser', JSON.stringify({
+      const userSession = JSON.stringify({
         id:    user.id,
         name:  user.name,
         email: user.email
-      }));
+      });
+      sessionStorage.setItem('currentUser', userSession);
+      localStorage.setItem('currentUser', userSession);
+      // Signal other pages/tabs that the user session was updated
+      try { localStorage.setItem('ae_user_updated', Date.now().toString()); } catch (e) { /* ignore */ }
 
       showAlert('success', `✓ Bienvenue, ${user.name} !`);
 
       setTimeout(() => {
         const redirect = sessionStorage.getItem('redirectAfterLogin');
         sessionStorage.removeItem('redirectAfterLogin');
-        window.location.href = redirect || '../index.html';
+        const target = redirect || '../index.html';
+        try {
+          const url = new URL(target, location.href);
+          url.searchParams.set('_ae_user', userSession);
+          window.location.href = url.toString();
+        } catch (e) {
+          // Fallback if URL fails (very old browsers)
+          window.location.href = target;
+        }
       }, 900);
     } else {
       showAlert('error', '✕ Email ou mot de passe incorrect.');

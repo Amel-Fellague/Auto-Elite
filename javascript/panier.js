@@ -141,19 +141,19 @@
   });
 
   checkoutBtn?.addEventListener('click', () => {
-    const session = JSON.parse(sessionStorage.getItem('currentUser') || 'null');
+    const raw = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+    const session = JSON.parse(raw || 'null');
     if (!session) {
       sessionStorage.setItem('redirectAfterLogin', location.href);
       window.location.href = 'connexion.html';
       return;
     }
 
-    // Simulate order placement
+    // Simulate order placement without clearing the cart prematurely
     checkoutBtn.textContent = 'Traitement en cours...';
     checkoutBtn.disabled = true;
 
     setTimeout(() => {
-      saveCart([]);
       window.location.href = 'paiement.html';
     }, 1500);
   });

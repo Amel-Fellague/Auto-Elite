@@ -11,8 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const userNameEl = document.getElementById('user-name');
   const logoutBtn  = document.getElementById('logout-btn');
 
+  function getCurrentSession() {
+    const raw = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+    return JSON.parse(raw || 'null');
+  }
+
+  // Consume user payload passed via URL after login (works with file:// where storage may be isolated)
+  (function consumeRedirectUser() {
+    try {
+      const params = new URLSearchParams(location.search);
+      const u = params.get('_ae_user');
+      if (u) {
+        localStorage.setItem('currentUser', u);
+        sessionStorage.setItem('currentUser', u);
+        const clean = location.pathname + location.hash;
+        history.replaceState(null, '', clean);
+      }
+    } catch (e) { /* ignore */ }
+  })();
+
   function updateNav() {
-    const session = JSON.parse(sessionStorage.getItem('currentUser') || 'null');
+    const session = getCurrentSession();
     if (session) {
       authNav?.classList.add('hidden');
       userNav?.classList.remove('hidden');
@@ -27,8 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateNav();
 
+  // Keep nav in sync when the page is restored from bfcache or revisited
+  window.addEventListener('pageshow', updateNav);
+  // Listen for session changes from other tabs/pages
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'ae_user_updated' || e.key === 'currentUser') updateNav();
+  });
+
   logoutBtn?.addEventListener('click', () => {
     sessionStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUser');
     updateNav();
     window.location.href = 'index.html';
   });
