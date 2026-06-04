@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement — AutoElite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/paiement.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">AutoElite</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="produits.html">Nos Voitures</a></li>
+                <li><a href="panier.html">Commande</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="paiement-container">
+            <div class="paiement-header">
+                <h1>Paiement</h1>
+                <p class="subtitle">Transaction sécurisée · SSL 256-bit</p>
+            </div>
+
+            <div class="paiement-content">
+
+                <!-- Résumé commande -->
+                <div class="order-summary">
+                    <h2>Votre commande</h2>
+                    <div id="order-items"></div>
+                    <div id="order-total" class="order-total"></div>
+                </div>
+
+                <!-- Formulaire paiement -->
+                <div class="payment-form">
+                    <h2>Informations de paiement</h2>
+
+                    <div id="form-alert" class="form-alert"></div>
+
+                    <form id="payment-form" novalidate>
+
+                        <!-- Méthode de paiement -->
+                        <div class="form-group">
+                            <label>Mode de paiement</label>
+                            <div class="payment-methods">
+                                <label class="payment-option active" data-type="card">
+                                    <input type="radio" name="payment-type" value="card" checked>
+                                    <span>💳 Carte Bancaire</span>
+                                </label>
+                                <label class="payment-option" data-type="paypal">
+                                    <input type="radio" name="payment-type" value="paypal">
+                                    <span>🅿 PayPal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Carte bancaire -->
+                        <div id="card-form">
+
+                            <!-- Aperçu visuel carte -->
+                            <div class="card-preview">
+                                <div class="card-chip">💳</div>
+                                <div class="card-number-display" id="card-number-display">•••• •••• •••• ••••</div>
+                                <div class="card-meta">
+                                    <div class="card-meta-item">
+                                        <span class="card-meta-label">Titulaire</span>
+                                        <span class="card-meta-value" id="card-name-display">VOTRE NOM</span>
+                                    </div>
+                                    <div class="card-meta-item">
+                                        <span class="card-meta-label">Expire</span>
+                                        <span class="card-meta-value" id="expiry-display">MM/AAAA</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-name">Nom sur la carte</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">👤</span>
+                                    <input type="text" id="card-name" placeholder="JEAN DUPONT" autocomplete="cc-name">
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number">Numéro de carte</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">💳</span>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" inputmode="numeric">
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Date d'expiration</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input type="text" id="expiry" placeholder="MM/AAAA" maxlength="7" autocomplete="cc-exp" inputmode="numeric">
+                                    </div>
+                                    <div class="form-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🔒</span>
+                                        <input type="text" id="cvv" placeholder="•••" maxlength="4" autocomplete="cc-csc" inputmode="numeric">
+                                    </div>
+                                    <div class="form-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PayPal -->
+                        <div id="paypal-form" class="hidden">
+                            <div class="paypal-info">
+                                <span class="paypal-logo">🅿</span>
+                                Vous allez être redirigé vers PayPal pour finaliser votre paiement en toute sécurité. Votre commande sera confirmée automatiquement.
+                            </div>
+                        </div>
+
+                        <button type="submit" id="pay-button">
+                            <div class="btn-spinner"></div>
+                            <span class="btn-text">Payer maintenant</span>
+                        </button>
+                    </form>
+
+                    <div class="secure-note">
+                        <div class="secure-dot"></div>
+                        Paiement 100% sécurisé — Données chiffrées SSL 256-bit
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align:center; padding:2rem; color:var(--text-muted); font-size:.82rem; border-top:1px solid var(--border);">
+            &copy; 2026 <strong style="color:var(--gold)">AutoElite</strong> — Tous droits réservés
+        </p>
+    </footer>
+
+    <script src="../javascript/paiement.js"></script>
+</body>
+</html>

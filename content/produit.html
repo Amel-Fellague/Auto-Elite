@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Voitures — AutoElite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/produit.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">AutoElite</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="produit.html" class="active">Nos Voitures</a></li>
+                <li><a href="panier.html">Commande</a></li>
+            </ul>
+            <div class="auth-buttons" id="auth-nav">
+                <button id="currency-toggle" class="btn btn-outline">DZD</button>
+                <a href="connexion.html" class="btn btn-outline">Connexion</a>
+                <a href="inscription.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="user-info hidden" id="user-nav">
+                <span id="user-name"></span>
+                <button id="logout-btn" class="btn btn-outline">Déconnexion</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-header">
+            <h1>Notre Catalogue</h1>
+            <p class="subtitle">Découvrez notre sélection exclusive de véhicules d'exception</p>
+
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Rechercher une marque ou un modèle...">
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-category="Tous">Tous</button>
+                <button class="filter-btn" data-category="Electrique">Électrique</button>
+                <button class="filter-btn" data-category="Berline">Berline</button>
+                <button class="filter-btn" data-category="SUV">SUV</button>
+                <button class="filter-btn" data-category="Sportive">Sportive</button>
+            </div>
+        </section>
+
+        <section id="products-grid" class="products-grid"></section>
+    </main>
+
+    <footer>
+        <p style="text-align:center; padding:2rem; color:var(--text-muted); font-size:.82rem;">
+            &copy; 2026 <strong style="color:var(--gold)">AutoElite</strong> — Tous droits réservés
+        </p>
+    </footer>
+
+    <!-- Color Modal -->
+    <div id="color-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-car-name">Choisir une couleur</h3>
+            <div id="color-options" class="color-options"></div>
+            <div id="selected-color-name" class="selected-color-name"></div>
+            <div class="modal-buttons">
+                <button id="modal-cancel" class="btn-secondary">Annuler</button>
+                <button id="modal-add" class="btn-primary">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/produit.js"></script>
+</body>
+</html>
