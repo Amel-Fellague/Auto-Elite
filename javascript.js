@@ -60,6 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'index.html';
   });
 
+  // ── Mobile menu toggle ──────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  function closeMobileNav() {
+    navLinks?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }
+  function openMobileNav() {
+    navLinks?.classList.add('open');
+    navToggle?.setAttribute('aria-expanded', 'true');
+  }
+  navToggle?.addEventListener('click', () => {
+    if (navLinks?.classList.contains('open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileNav();
+    });
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMobileNav();
+  });
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!navLinks || !navToggle) return;
+    if (navLinks.classList.contains('open') && target instanceof Node && !navLinks.contains(target) && target !== navToggle) {
+      closeMobileNav();
+    }
+  });
+
   // ── Hero text animation ─────────────────────
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {

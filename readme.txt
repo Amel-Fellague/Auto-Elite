@@ -3,9 +3,8 @@
               Site de vente de voitures de luxe en ligne
 ================================================================================
 
---------------------------------------------------------------------------------
- DESCRIPTION DU SITE
---------------------------------------------------------------------------------
+
+ DESCRIPTION DU SITE :
 
 AutoElite est un site web de vente de véhicules haut de gamme destiné au marché
 algérien. Il propose une expérience d'achat en ligne élégante et immersive,
@@ -17,9 +16,8 @@ Rolls-Royce, Bentley, McLaren et bien d'autres. L'utilisateur peut parcourir le
 catalogue, choisir la couleur de son véhicule, gérer sa commande, et procéder au
 paiement de manière fluide et intuitive.
 
---------------------------------------------------------------------------------
- FONCTIONNALITÉS
---------------------------------------------------------------------------------
+
+ FONCTIONNALITÉS :
 
   [1] PAGE D'ACCUEIL (index.html)
       - Présentation de la marque AutoElite avec section hero animée
@@ -72,9 +70,8 @@ paiement de manière fluide et intuitive.
       - Statut de confirmation
       - Liens de retour vers l'accueil et le catalogue
 
---------------------------------------------------------------------------------
- STRUCTURE DU PROJET
---------------------------------------------------------------------------------
+
+ STRUCTURE DU PROJET :
 
   AutoElite/
   │
@@ -105,11 +102,9 @@ paiement de manière fluide et intuitive.
   │   ├── panier.js                 ← Gestion du panier
   │   └── paiement.js               ← Formulaire de paiement
   │
-  └── images/                       ← Images locales (optionnel)
+  └── images/                       ← Images locales 
 
---------------------------------------------------------------------------------
- INSTRUCTIONS D'UTILISATION
---------------------------------------------------------------------------------
+ INSTRUCTIONS D'UTILISATION :
 
   Prérequis :
   -----------
@@ -143,15 +138,14 @@ paiement de manière fluide et intuitive.
   - Pour réinitialiser les données (comptes, panier), vider le localStorage
     via les outils de développement du navigateur (F12 → Application → Storage).
 
---------------------------------------------------------------------------------
- TECHNOLOGIES UTILISÉES
---------------------------------------------------------------------------------
+
+ TECHNOLOGIES UTILISÉES :
 
   Langages :
   ----------
   - HTML5               → Structure sémantique des pages
   - CSS3                → Mise en forme, animations, responsive design
-  - JavaScript (ES6+)   → Interactivité, logique métier, gestion des données
+  - JavaScript          → Interactivité, logique métier, gestion des données
 
   Polices (Google Fonts) :
   ------------------------
@@ -173,20 +167,16 @@ paiement de manière fluide et intuitive.
   --------
   - Unsplash (unsplash.com) → Photographies de véhicules (libres de droits)
 
---------------------------------------------------------------------------------
- MEMBRES DU GROUPE
---------------------------------------------------------------------------------
+
+ MEMBRES DU GROUPE :
 
     ✦  OUALI Ikram
     ✦  FELLAGUE Amel
 
-    Formation  : [Votre filière / spécialité]
-    Établissement : [Votre université / école]
+    Formation  : Informatique 
+    Établissement : UMMTO
     Année académique : 2025 – 2026
 
---------------------------------------------------------------------------------
- CONCLUSION
---------------------------------------------------------------------------------
 
 AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
 pratique les compétences acquises en développement web front-end, notamment
@@ -197,6 +187,7 @@ de l'expérience utilisateur (UX/UI). Ce projet nous a permis de simuler le
 cycle complet d'une application e-commerce réelle, de l'authentification
 jusqu'à la confirmation de commande, dans un contexte professionnel et
 esthétique soigné.
+
 
 ================================================================================
                         © 2026 AutoElite — Tous droits réservés
