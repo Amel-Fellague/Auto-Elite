@@ -91,11 +91,7 @@ paiement de manière fluide et intuitive.
   │   ├── inscription.css           ← Styles supplémentaires inscription
   │   ├── produits.css              ← Styles catalogue
   │   ├── panier.css                ← Styles panier / commande
-<<<<<<< HEAD
-  │   |── paiement.css              ← Styles paiement
-=======
   │   ├── paiement.css              ← Styles paiement
->>>>>>> 13c415a81de69de85c79e629ebc880e2e510267f
   │   └── style.css                 ← Styles spécifiques à l'accueil
   |
   ├── javascript/                   ← Scripts par page
@@ -103,11 +99,7 @@ paiement de manière fluide et intuitive.
   │   ├── inscription.js            ← Logique d'inscription
   │   ├── produits.js               ← Catalogue, filtres, panier, modal
   │   ├── panier.js                 ← Gestion du panier
-<<<<<<< HEAD
-  │   |── paiement.js               ← Formulaire de paiement
-=======
   │   ├── paiement.js               ← Formulaire de paiement
->>>>>>> 13c415a81de69de85c79e629ebc880e2e510267f
   │   └── javascript.js             ← Script principal (accueil)
   |
   └── images/                       ← Images locales 
@@ -173,39 +165,16 @@ paiement de manière fluide et intuitive.
 
   Images :
   --------
-<<<<<<< HEAD
-  - Pinterest  → Images de véhicules
-=======
   - Pinterest → Photographies de véhicules
->>>>>>> 13c415a81de69de85c79e629ebc880e2e510267f
 
 
  MEMBRES DU GROUPE :
-
-   ✦  OUALI Ikram
-   ✦  FELLAGUE Amel
+       ✦  FELLAGUE Amel
 
    Formation  : Informatique
    Établissement : UMMTO
    Année académique : 2025 – 2026
 
-<<<<<<< HEAD
-
- AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
-pratique les compétences acquises en développement web front-end, notamment
-la conception d'interfaces utilisateur modernes, la structuration d'un projet
-multi-pages, la manipulation du DOM en JavaScript, la gestion de données
-côté client, ainsi que l'application des principes du design responsive et
-de l'expérience utilisateur (UX/UI). Ce projet nous a permis de simuler le
-cycle complet d'une application e-commerce réelle, de l'authentification
-jusqu'à la confirmation de commande, dans un contexte professionnel et
-esthétique soigné.
-
-
-================================================================================
-                        © 2026 AutoElite — Tous droits réservés
-================================================================================
-=======
   AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
   pratique les compétences acquises en développement web front-end, notamment
   la conception d'interfaces utilisateur modernes, la structuration d'un projet
@@ -214,4 +183,3 @@ esthétique soigné.
   de l'expérience utilisateur (UX/UI). Ce projet nous a permis de simuler le
   cycle complet d'une application e-commerce réelle, de l'authentification
   jusqu'à la confirmation de commande, dans un contexte professionnel et
->>>>>>> 13c415a81de69de85c79e629ebc880e2e510267f
