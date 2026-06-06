@@ -91,7 +91,7 @@ paiement de manière fluide et intuitive.
   │   ├── inscription.css           ← Styles supplémentaires inscription
   │   ├── produits.css              ← Styles catalogue
   │   ├── panier.css                ← Styles panier / commande
-  │   └── paiement.css              ← Styles paiement
+  │   ├── paiement.css              ← Styles paiement
   │   └── style.css                 ← Styles spécifiques à l'accueil
   |
   ├── javascript/                   ← Scripts par page
@@ -99,7 +99,7 @@ paiement de manière fluide et intuitive.
   │   ├── inscription.js            ← Logique d'inscription
   │   ├── produits.js               ← Catalogue, filtres, panier, modal
   │   ├── panier.js                 ← Gestion du panier
-  │   |── paiement.js               ← Formulaire de paiement
+  │   ├── paiement.js               ← Formulaire de paiement
   │   └── javascript.js             ← Script principal (accueil)
   |
   └── images/                       ← Images locales 
@@ -165,30 +165,23 @@ paiement de manière fluide et intuitive.
 
   Images :
   --------
-  - Pinterest → Photographies de véhicules 
+  - Pinterest → Photographies de véhicules
 
 
  MEMBRES DU GROUPE :
 
-    ✦  OUALI Ikram
-    ✦  FELLAGUE Amel
+   ✦  OUALI Ikram
+   ✦  FELLAGUE Amel
 
-    Formation  : Informatique 
-    Établissement : UMMTO
-    Année académique : 2025 – 2026
-
+   Formation  : Informatique
+   Établissement : UMMTO
+   Année académique : 2025 – 2026
 
   AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
-pratique les compétences acquises en développement web front-end, notamment
-la conception d'interfaces utilisateur modernes, la structuration d'un projet
-multi-pages, la manipulation du DOM en JavaScript, la gestion de données
-côté client, ainsi que l'application des principes du design responsive et
-de l'expérience utilisateur (UX/UI). Ce projet nous a permis de simuler le
-cycle complet d'une application e-commerce réelle, de l'authentification
-jusqu'à la confirmation de commande, dans un contexte professionnel et
-esthétique soigné.
-
-
-================================================================================
-                        © 2026 AutoElite — Tous droits réservés
-================================================================================
+  pratique les compétences acquises en développement web front-end, notamment
+  la conception d'interfaces utilisateur modernes, la structuration d'un projet
+  multi-pages, la manipulation du DOM en JavaScript, la gestion de données
+  côté client, ainsi que l'application des principes du design responsive et
+  de l'expérience utilisateur (UX/UI). Ce projet nous a permis de simuler le
+  cycle complet d'une application e-commerce réelle, de l'authentification
+  jusqu'à la confirmation de commande, dans un contexte professionnel et
