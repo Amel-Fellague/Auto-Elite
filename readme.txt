@@ -165,7 +165,7 @@ paiement de manière fluide et intuitive.
 
   Images :
   --------
-  - Unsplash (unsplash.com) → Photographies de véhicules (libres de droits)
+  - Pinterest → Photographies de véhicules 
 
 
  MEMBRES DU GROUPE :
