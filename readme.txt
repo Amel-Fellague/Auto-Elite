@@ -76,8 +76,6 @@ paiement de manière fluide et intuitive.
   AutoElite/
   │
   ├── index.html                    ← Page d'accueil
-  ├── style.css                     ← Styles spécifiques à l'accueil
-  ├── javascript.js                 ← Script principal (accueil)
   │
   ├── content/                      ← Pages secondaires
   │   ├── produits.html             ← Catalogue de voitures
@@ -94,14 +92,16 @@ paiement de manière fluide et intuitive.
   │   ├── produits.css              ← Styles catalogue
   │   ├── panier.css                ← Styles panier / commande
   │   └── paiement.css              ← Styles paiement
-  │
+  │   └── style.css                 ← Styles spécifiques à l'accueil
+  |
   ├── javascript/                   ← Scripts par page
   │   ├── connexion.js              ← Logique de connexion
   │   ├── inscription.js            ← Logique d'inscription
   │   ├── produits.js               ← Catalogue, filtres, panier, modal
   │   ├── panier.js                 ← Gestion du panier
-  │   └── paiement.js               ← Formulaire de paiement
-  │
+  │   |── paiement.js               ← Formulaire de paiement
+  │   └── javascript.js             ← Script principal (accueil)
+  |
   └── images/                       ← Images locales 
 
  INSTRUCTIONS D'UTILISATION :
@@ -178,7 +178,7 @@ paiement de manière fluide et intuitive.
     Année académique : 2025 – 2026
 
 
-AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
+  AutoElite est un projet réalisé dans un but pédagogique afin de mettre en
 pratique les compétences acquises en développement web front-end, notamment
 la conception d'interfaces utilisateur modernes, la structuration d'un projet
 multi-pages, la manipulation du DOM en JavaScript, la gestion de données
